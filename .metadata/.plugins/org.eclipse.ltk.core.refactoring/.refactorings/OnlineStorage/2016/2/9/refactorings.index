@@ -1,0 +1,38 @@
+1456027537407	Rename resource 'index.html'
+1456027544745	Rename resource 'registration_done.html'
+1456031963137	Rename type 'LoginServlet'
+1456032256867	Move compilation unit
+1456032260877	Move compilation unit
+1456032265265	Delete element
+1456032275081	Rename type 'Login'
+1456032293783	Rename type 'UserRegistration'
+1456032486852	Rename resource 'register.html'
+1456032492929	Rename resource 'admin_login.html'
+1456032498284	Rename resource 'user_filename_upload.html'
+1456032503005	Rename resource 'user_filename_upload2.html'
+1456032508273	Rename resource 'view_files.html'
+1456032643840	Copy file
+1456047590277	Delete element
+1456064934630	Delete element
+1456064939686	Rename resource 'user_filename_upload2.jsp'
+1456066446077	Delete element
+1456066468261	Rename type 'DBHelper'
+1456069733970	Copy file
+1456580021857	Delete elements
+1456580049311	Delete element
+1456580054147	Delete element
+1456580138138	Rename resource 'admin_files_page.html'
+1456580143645	Rename resource 'admin_home_page.html'
+1456580149027	Rename resource 'edit_user.html'
+1456580156312	Rename resource 'error.html'
+1456580162131	Rename resource 'file_details_page.html'
+1456580167060	Rename resource 'file_upload_page.html'
+1456580172926	Rename resource 'login.html'
+1456580178043	Rename resource 'register.html'
+1456580185266	Rename resource 'registration_done.html'
+1456580190772	Rename resource 'security_question_page.html'
+1456580196061	Rename resource 'user_alert_page.html'
+1456580201271	Rename resource 'user_home_page.html'
+1456580206185	Rename resource 'user_password_change.html'
+1456581816389	Delete element
+1456584135502	Delete element

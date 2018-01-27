@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Fog Computing</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.2.2/css/flat-ui.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.2.2/css/flat-ui.css.map">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+</head>
+<body>
+	<!-- navbar here -->
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Fog Computing</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                	<!-- TODO: update the links properly -->
+                    <li><a href="<%=request.getContextPath()%>/Dispatcher?pageid=showLoginPage"><i class="fa fa-home"></i>&nbsp; Home</a></li>
+                </ul>                
+            </div>
+		</div><!-- container div ends here -->
+	</nav><!-- navbar ends here -->
+</body>
+	<div class="container" style="margin-top:100px;">
+		<div class="row row-content">
+			<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<h4 class="text-center">Registration</h4>
+						<form action="Dispatcher?pageid=doRegistration" method="POST" class="form-horizontal">
+							<!-- user name input -->
+							<div class="form-group">
+								<label class="control-label col-xs-4 col-sm-4" for="name">Name</label>
+								<div class="col-xs-7 col-sm-7">
+									<input type="text" name="name" class="form-control" id="name" placeholder="Your name here">
+								</div>
+							</div>
+
+							<!-- password input -->
+							<div class="form-group">
+								<label class="control-label col-xs-4 col-sm-4" for="passWord">Password</label>
+								<div class="col-xs-7 col-sm-7">
+									<input type="password" name="password" class="form-control" id="passWord" placeholder="Pick a password" required>
+								</div>
+							</div>
+
+							<!-- confirm password -->
+							<div class="form-group">
+								<label class="control-label col-xs-4 col-sm-4" for="confirmPassWord">Confirm Password</label>
+								<div class="col-xs-7 col-sm-7">
+									<input type="password" name="confirm_password" class="form-control" id="confirmPassWord" placeholder="Type above password again" required>
+								</div>
+							</div>
+
+							<!-- email -->
+							<div class="form-group">
+								<label class="control-label col-xs-4 col-sm-4" for="emailInput">Email Id</label>
+								<div class="col-xs-7 col-sm-7">
+									<input type="email" name="email_id" class="form-control" id="emailInput" placeholder="Your email-id here" required>
+								</div>
+							</div>
+
+							<!-- mobile no -->
+							<div class="form-group">
+								<label class="control-label col-xs-4 col-sm-4" for="mobileInput">Mobile No.</label>
+								<div class="col-xs-7 col-sm-7">
+									<input type="text" name="mobile_no" class="form-control" id="mobileInput" placeholder="Your mobile no. here" required>
+								</div>
+							</div>
+
+							<!-- address -->
+							<div class="form-group">
+								<label class="control-label col-xs-4 col-sm-4" for="addressInput">Address</label>
+								<div class="col-xs-7 col-sm-7">
+									<input type="text" name="address" class="form-control" id="addressInput" placeholder="Your address here" required>
+								</div>
+							</div>
+
+							<!-- time -->
+							<div class="form-group">
+								<label class="control-label col-xs-4 col-sm-4" for="timeInput">Time</label>
+								<div class="col-xs-7 col-sm-7" id="timeInput">
+									<div class="col-xs-3 col-sm-3">
+										<label for="fromInput">HH</label>
+										<input name="time_from_hh" id="fromhhinput" class="form-control" type="number" min="00" max="23">
+									</div>
+									<div class="col-xs-3 col-sm-3">
+										<label for="fromInput">MM</label>
+										<input name="time_from_mm" id="frommminput" class="form-control" type="number" min="00" max="59">
+									</div>
+									<div class="col-xs-3 col-sm-3">
+										<label for="toInput">HH</label>
+										<input name="time_to_hh" id="tohhinput" class="form-control" type="number" min="00" max="23">
+									</div>
+									<div class="col-xs-3 col-sm-3">
+										<label for="fromInput">MM</label>
+										<input name="time_to_mm" id="tomminput" class="form-control" type="number" min="00" max="23">
+									</div>
+								</div>
+							</div>
+
+							<!-- security question -->
+							<div class="form-group">
+								<label class="control-label col-xs-4 col-sm-4" for="securityQuestionInput">Security Question</label>
+								<div class="col-xs-7 col-sm-7">
+									<select name="security_question" id="securityQuestionInput" class="form-control">
+										<option value="What was the maiden name of your mother?">What was the maiden name of your mother?</option>
+										<option value="What was the brand of your first car?">What was the brand of your first car?</option>
+										<option value="What is your favourite movie?">What is your favourite movie?</option>
+										<option value="What is your favourite color?">What is your favourite color?</option>
+										<option value="Who is your favourite politician?">Who is your favourite politician?</option>
+									</select>
+								</div>
+							</div>
+
+							<!-- security question response -->
+							<div class="form-group">i
+								<label class="control-label col-xs-4 col-sm-4" for="securityAnswerInput">Answer</label>
+								<div class="col-xs-7 col-sm-7">
+									<input type="text" name="security_answer" class="form-control" id="securityAnswerInput" placeholder="Your response here" required>
+								</div>
+							</div>
+
+							<!-- login button -->
+							<input type="submit" class="btn btn-lg btn-block btn-inverse" value="Sign Up">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.2.2/js/flat-ui.min.js"></script>
+</html>

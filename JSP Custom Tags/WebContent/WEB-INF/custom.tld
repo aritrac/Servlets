@@ -1,0 +1,42 @@
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>2.0</jsp-version>
+	<short-name>Example TLD</short-name>
+	<tag>
+		<name>My</name>
+		<tag-class>com.aritra.MyTag</tag-class>
+		<body-content>empty</body-content>
+	</tag>
+	<tag>
+		<name>MyWithBody</name>
+		<tag-class>com.aritra.MyTagWithBodySupport</tag-class>
+		<body-content>scriptless</body-content>
+	</tag>
+	<tag>
+		<name>MyWithAttribute</name>
+		<tag-class>com.aritra.MyTagWithAttribute</tag-class>
+		<body-content>empty</body-content>
+		
+		<!-- Property						Purpose
+			 name							defines the name of an attribute. Each attribute name must be unique for a particular tag.
+			 required						specifies if this attribute is required. It would be false for optional.
+			 rtexprvalue					if a runtime expression value for a tag attribute is valid
+			 type							Defines the Java class-type of this attribute. By default it is String.
+			 description					Informational description can be provided.
+			 fragment						Declares if this attribute value should be treated as a JspFragment. -->
+		<attribute>
+			<name>message</name>
+		</attribute>
+		<attribute>
+			<name>attribute_name1</name>
+			<required>true</required>
+			<type>java.util.Boolean</type>
+			<fragment>false</fragment>
+		</attribute>
+		<attribute>
+			<name>attribute_name2</name>
+			<required>false</required>
+			<type>java.util.Date</type>
+		</attribute>
+	</tag>
+</taglib>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<%@page import="com.fog.computing.pojo.User"%>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Fog Computing</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.2.2/css/flat-ui.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.2.2/css/flat-ui.css.map">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+</head>
+<body>
+	<!-- navbar here -->
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Fog Computing</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                	<!-- TODO: update the links properly -->
+                    <li><a
+						href="<%=request.getContextPath()%>/Dispatcher?pageid=logout"><i
+							class="fa fa-sign-out">&nbsp; Logout</i></a></li>
+                </ul>                
+            </div>
+		</div><!-- container div ends here -->
+	</nav><!-- navbar ends here -->
+</body>
+<%
+User user = (User)session.getAttribute("userBeingEdited");
+if(user != null){
+%>
+	<div class="container" style="margin-top:100px;">
+		<div class="row row-content">
+			<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<h4 class="text-center">Edit User</h4>
+						<form action="Dispatcher?pageid=doEditUser&userid=<%=user.getUserId() %>" method="POST" class="form-horizontal">
+							<!-- time -->
+							<div class="form-group">
+								<label class="control-label col-xs-4 col-sm-4" for="timeInput">Time</label>
+								<div class="col-xs-7 col-sm-7" id="timeInput">
+									<div class="col-xs-3 col-sm-3">
+										<label for="fromInput">HH</label>
+										<input name="time_from_hh" id="fromhhinput" class="form-control" type="number" min="00" max="23" value=<%=user.getStartHH() %>>
+									</div>
+									<div class="col-xs-3 col-sm-3">
+										<label for="fromInput">MM</label>
+										<input name="time_from_mm" id="frommminput" class="form-control" type="number" min="00" max="59" value=<%=user.getStartMM() %>>
+									</div>
+									<div class="col-xs-3 col-sm-3">
+										<label for="toInput">HH</label>
+										<input name="time_to_hh" id="tohhinput" class="form-control" type="number" min="00" max="23" value=<%=user.getEndHH() %>>
+									</div>
+									<div class="col-xs-3 col-sm-3">
+										<label for="fromInput">MM</label>
+										<input name="time_to_mm" id="tomminput" class="form-control" type="number" min="00" max="23" value=<%=user.getEndMM() %>>
+									</div>
+								</div>
+							</div>
+							
+							<%
+							String opt1 = "";
+							String opt2 = "";
+							String opt3 = "";
+							String opt4 = "";
+							String opt5 = "";
+							if(user.getSecurityQuestion().equalsIgnoreCase("What was the maiden name of your mother?")){
+								opt1 = "selected";
+							}
+							if(user.getSecurityQuestion().equalsIgnoreCase("What was the brand of your first car?")){
+								opt2 = "selected";
+							}
+							if(user.getSecurityQuestion().equalsIgnoreCase("What is your favourite movie?")){
+								opt3 = "selected";
+							}
+							if(user.getSecurityQuestion().equalsIgnoreCase("What is your favourite color?")){
+								opt4 = "selected";
+							}
+							if(user.getSecurityQuestion().equalsIgnoreCase("Who is your favourite politician?")){
+								opt5 = "selected";
+							}
+							%>
+
+							<!-- security question -->
+							<div class="form-group">
+								<label class="control-label col-xs-4 col-sm-4" for="securityQuestionInput">Security Question</label>
+								<div class="col-xs-7 col-sm-7">
+									<select name="security_question" id="securityQuestionInput" class="form-control">
+										<option value="What was the maiden name of your mother?" <%=opt1 %>>What was the maiden name of your mother?</option>
+										<option value="What was the brand of your first car?" <%=opt2 %>>What was the brand of your first car?</option>
+										<option value="What is your favourite movie?" <%=opt3 %>>What is your favourite movie?</option>
+										<option value="What is your favourite color?" <%=opt4 %>>What is your favourite color?</option>
+										<option value="Who is your favourite politician?" <%=opt5 %>>Who is your favourite politician?</option>
+									</select>
+								</div>
+							</div>
+
+							<!-- security question response -->
+							<div class="form-group">i
+								<label class="control-label col-xs-4 col-sm-4" for="securityAnswerInput">Answer</label>
+								<div class="col-xs-7 col-sm-7">
+									<input type="text" name="security_answer" class="form-control" id="securityAnswerInput" placeholder="Your response here" required value="<%=user.getSecurityAnswer() %>">
+								</div>
+							</div>
+<%} %>
+							<!-- login button -->
+							<input type="submit" class="btn btn-lg btn-block btn-inverse" value="Update User">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.2.2/js/flat-ui.min.js"></script>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<!-- 
+We can upload text file, binary or image file to the server by using JSP.
+The following sections how to create client side form and server script to upload a file to the server.
+ -->
+<body>
+	Select a file to upload: <br/>
+	<form action="fileupload.jsp" method="post" enctype="multipart/form-data">
+		<input type="file" name="file" size="50"/>
+		<br/>
+		<input type="submit" value="Upload File"/>
+	</form>
+</body>
+</html>

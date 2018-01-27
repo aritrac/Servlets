@@ -1,0 +1,55 @@
+package zad4;
+
+public class Main {
+	private String IDPrzedmiotu;
+	private String OpisPrzedmiotu;
+	private int Ilosckupionych;
+	private int Cenasztuki;
+	private double Amount;
+	
+	public Main(String ID, String opis, int ilosc, int cena) {
+	    IDPrzedmiotu = ID ;
+	    OpisPrzedmiotu = opis ;
+	    Ilosckupionych =  ilosc ;
+	    Cenasztuki = cena;
+	}
+	
+	public static void main(String[] args) {
+		Main main = new Main("AS", "FG", 23, 45);
+		
+		System.out.println(main.getInvoiceAmount());
+	}
+
+	 public void setIDPrzedmiotu(String ID) {
+	    IDPrzedmiotu = ID;
+	}
+
+	public void setOpisPrzedmiotu(String opis) {
+	    OpisPrzedmiotu = opis;
+	}
+
+	public void setIlosckupionych(int ilosc) {
+	    this.Ilosckupionych = ilosc;
+	}
+
+	public void setCenasztuki(int cena) {
+	    this.Cenasztuki = cena;
+	}
+
+	public String getIDPrzedmiotu() {
+	    return IDPrzedmiotu ;
+	}
+	public String getOpisPrzedmiotu () {
+	    return OpisPrzedmiotu;
+	}
+	public int getIlosckupionych() {
+	    return Ilosckupionych ;
+	}
+	public int getCenasztuki() {
+	    return Cenasztuki ;
+	}
+	public double getInvoiceAmount () {
+	    Amount =  Cenasztuki * Ilosckupionych ;
+	    return Amount ;
+	}
+}

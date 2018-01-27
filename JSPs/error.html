@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- errorType -->
+<!-- errorMessage -->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Fog Computing</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.2.2/css/flat-ui.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.2.2/css/flat-ui.css.map">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../css/style.css"> -->
+</head>
+<body>
+	<!-- navbar here -->
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Fog Computing Encountered An Error</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                              
+            </div>
+		</div><!-- container div ends here -->
+	</nav><!-- navbar ends here -->
+</body>
+<%String errorType = (String)request.getAttribute("errorType");
+  String showLogin = ""; 
+  String showRegistration = "";
+  if(errorType.equalsIgnoreCase("login_error")){
+	  showLogin = "";
+	  showRegistration = "display:none";
+  }
+  if(errorType.equalsIgnoreCase("registration_error")){
+	  showLogin = "display:none";
+	  showRegistration = "";
+  }%>
+	<!-- LOGIN ERROR DIV -->
+	<div class="container" style="margin-top:150px;<%=showLogin %>">
+		<div class="row row-content">
+			<div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<h4 class="text-center"><%=request.getAttribute("errorMessage")%></h4>
+						<h4 class="text-center">Please login again</h4>
+						<form action="Dispatcher?pageid=showLoginPage" method="POST">
+							<!-- user name input -->
+							
+
+							<!-- login button -->
+							<input type="submit" class="btn btn-lg btn-block btn-inverse" value="Login">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- REGISTRATION ERROR DIV -->
+	<div class="container" style="margin-top:150px;<%=showRegistration %>">
+		<div class="row row-content">
+			<div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<h4 class="text-center"><%=request.getAttribute("errorMessage")%></h4>
+						<h4 class="text-center">Please register again</h4>
+						<form action="Dispatcher?pageid=showRegistrationPage" method="POST">
+							<!-- user name input -->
+							
+
+							<!-- login button -->
+							<input type="submit" class="btn btn-lg btn-block btn-inverse" value="Register">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.2.2/js/flat-ui.min.js"></script>
+</html>

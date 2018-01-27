@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+	<book>
+		<name>JSP</name>
+		<author>java2s.com</author>
+	</book>
+	<book>
+		<name>Servlet</name>
+		<author>java2s.com</author>
+	</book>
+</books>
