@@ -7,5 +7,5 @@
   <module moduleId="org.eclipse.jst.jee.server:JSP Client Request" serverId="Tomcat v8.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:JSP Syntax" serverId="Tomcat v8.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:JSP Form Processing" serverId="Tomcat v8.0 Server at localhost"/>
-  <module moduleId="org.eclipse.jst.jee.server:JSP Actions"/>
+  <module moduleId="org.eclipse.jst.jee.server:JSP Actions" serverId="Tomcat v8.5 Server at localhost"/>
 </modules>

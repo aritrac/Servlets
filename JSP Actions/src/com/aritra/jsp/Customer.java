@@ -16,5 +16,8 @@ public class Customer {
 		this.lastName = lastName;
 	}
 	
+	public static void main(String[] args) {
+		System.out.println("Print dummy");
+	}
 	
 }

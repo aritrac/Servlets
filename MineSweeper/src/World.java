@@ -131,8 +131,8 @@ public class World {
 			}
 		}
 		if (lost) {
-			w.drawString("UH OH. YOU LOST.", 100, 200);
-			w.drawString("Press R key to replay!", 100, 400);
+			w.drawString("YOU LOST", 100, 200);
+			w.drawString("Press R key to start again!", 100, 400);
 		} else if (isFinished) {
 			w.drawString("YOU WIN.", 100, 200);
 		}

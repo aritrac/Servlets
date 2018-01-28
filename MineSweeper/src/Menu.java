@@ -56,7 +56,7 @@ class Menu extends JFrame implements MouseListener, KeyListener{
 		Font fnt = new Font("Arial", Font.BOLD, 40);
 		g.setFont(fnt);
 		g.setColor(Color.RED);
-		g.drawString("WELCOME TO MINESWEEPER", 100, 100);
+		g.drawString("ARISWEEPER", 100, 100);
 		Font fnt1 = new Font("Georgia", Font.HANGING_BASELINE, 30);
 		g.setFont(fnt1);
 		g.drawString("Left click to press a tile.", 100, 200);
@@ -66,7 +66,7 @@ class Menu extends JFrame implements MouseListener, KeyListener{
 		g.drawString("If you expose a mine, YOU LOSE.", 100, 320);
 		g.drawString("Your goal is to correctly place all flags", 100, 350);
 		g.drawString("Press R to reset the board.", 100, 400);
-		g.drawString("CLICK ANYWHERE TO PLAY.", 100, 440);
+		g.drawString("CLICK ANYWHERE TO START", 100, 440);
 		
 	}
 
